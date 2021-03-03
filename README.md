@@ -28,22 +28,28 @@ android {
 ```
 
 ### Activity
-Inside the onCreate function, we would have the following
+Normally, we would override onCreate and call the setContentView() to provide a UI, in this case *activity_main*.
 
 ```kotlin
-overridefunonCreate(savedInstanceState:Bundle?){
+override fun onCreate(savedInstanceState:Bundle?){
 super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 }
 ```
 ### Activity & ViewBinding
-With ViewBinding, **setContextView()** would be replace with the following
+With ViewBinding, **setContextView()** would be replace.
+As stated above, the View Binding framework auto generate a class that maps to an xml layout file.
 ```kotlin
-overridefunonCreate(savedInstanceState:Bundle?){
-super.onCreate(savedInstanceState)
-	binding = ActivityMainBinding.inflate(layoutInflater)
-	setContentView(binding.root)
+...
+private lateinit var binding: ActivityMainBinding
+    
+override fun onCreate(savedInstanceState:Bundle?){
+    super.onCreate(savedInstanceState)
+
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 }
+    ...
 ```
 You can now use the instance of the binding class to reference any of the views within the current layout.
 
