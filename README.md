@@ -26,7 +26,7 @@ android {
 }
 ```
 
-## Activity & ViewBinding
+### Activity
 Inside the onCreate function, we would have the following
 
 ```kotlin
@@ -35,14 +35,17 @@ super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 }
 ```
-That would be replace with the following:
+### Activity & ViewBinding
+With ViewBinding, **setContextView()** would be replace with the following
 ```kotlin
 overridefunonCreate(savedInstanceState:Bundle?){
 super.onCreate(savedInstanceState)
-	binding=ActivityMainBinding.inflate(layoutInflater)
+	binding = ActivityMainBinding.inflate(layoutInflater)
 	setContentView(binding.root)
 }
 ```
 You can now use the instance of the binding class to reference any of the views within the current layout.
 
-## Fragment & ViewBinding
+### Fragment
+
+### Fragment & ViewBinding
