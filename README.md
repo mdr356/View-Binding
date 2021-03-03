@@ -17,6 +17,7 @@ View Binding allows you to access only the ids of view that are in the current l
 
 ## Enable View Binding
 
+*build.gradle* file
 ```kotlin
 // Android Studio 4.0
 android {
