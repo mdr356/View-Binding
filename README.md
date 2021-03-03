@@ -80,9 +80,9 @@ override fun onCreateView(
 ```
 ### Conclustion
 when you have initialize the view binding you can access all the views withing the xml layout class.
-```
+```kotlin
  binding.buttonFirst.setOnClickListener { 
-            ...
-        }
+         
+}
  ```
- ...
+ etc...
