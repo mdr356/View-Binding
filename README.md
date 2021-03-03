@@ -15,7 +15,7 @@ activity_main.xml -> ActivityMainBinding.java
 View Binding allows you to access only the ids of view that are in the current layout. Creating a safe view lookup.
 
 
-## Enable View Binding
+### Enable View Binding
 
 *build.gradle* file
 ```kotlin
