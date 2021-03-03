@@ -28,7 +28,7 @@ android {
 ```
 
 ### Activity
-Normally, we would override onCreate and call the setContentView() to provide a UI, in this case *activity_main*.
+Normally, we would override onCreate and call the setContentView() to provide a UI, in this case *activity_main.xml*.
 
 ```kotlin
 override fun onCreate(savedInstanceState:Bundle?){
@@ -55,4 +55,34 @@ You can now use the instance of the binding class to reference any of the views 
 
 ### Fragment
 
+normally, the onCreateView() is called to create the UI for the fragment.
+```kotlin
+override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_first, container, false)
+}
+```
 ### Fragment & ViewBinding
+With ViewBinding, we can do the following:
+```kotlin
+override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentFirstBinding.inflate(inflater, container, false)
+        
+        return binding.root
+    }
+```
+### Conclustion
+when you have initialize the view binding you can access all the views withing the xml layout class.
+```
+ binding.buttonFirst.setOnClickListener { 
+            ...
+        }
+ ```
+ ...
